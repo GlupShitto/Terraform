@@ -1,0 +1,17 @@
+cpu                    = 4
+cores-per-socket       = 1
+ram                    = 4096
+disksize               = 100 # in GB
+vm-guest-id            = "oracleLinux8_64Guest"
+vsphere-unverified-ssl = "true"
+vsphere-datacenter     = "Datacenter"
+vsphere-cluster        = "Cluster01"
+vm-datastore           = "datastore"
+vm-network             = "VM Network"
+vm-domain              = "home"
+dns_server_list        = ["1.1.1.1", "8.8.8.8"]
+name                   = "ubuntu22-04-test"
+ipv4_address           = "192.168.179.91"
+ipv4_gateway           = "192.168.179.1"
+ipv4_netmask           = "24"
+vm-template-name       = "Oracle_8_Template"

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <script type="text/javascript" src="./en/welcomeRes.js"> </script>
+  <script type="text/javascript" src="./scripts/setUserLocale.js"> </script>
+  <script type="text/javascript" src="./scripts/classification.js"></script>
+  <script type="text/javascript">document.write("<title>" + ID_VC_Welcome + "</title>");</script>
+
+  <link rel="stylesheet" href="./default.css" type="text/css" />
+  <link rel="stylesheet" href="./print.css" type="text/css" media="print" />
+  <link rel="stylesheet" href="./classification.css" type="text/css" />
+  <meta name="description" content="VMware vSphere is virtual infrastructure software for partitioning, consolidating and managing systems in mission-critical environments. VMware ESX Server provides a highly scalable platform with advanced resource management capabilities, which can be managed by vSphere."/>
+ </head>
+ <body>
+  <div id="classificationBanner" class="banner none"></div>
+  <div id="header"><img src="./header-logo.png" width="586" height="42" alt="VMware vSphere 6" /></div>
+  <div class="gettingStarted">
+   <h1><script type="text/javascript">document.write(ID_GettingStarted);</script></h1>
+   <a class="btn btn-primary" href="/ui/"><script type="text/javascript">document.write(ID_LogInH5Client);</script></a>
+   <h1><script type="text/javascript">document.write(ID_DocDesc);</script></h1>
+   <p><a class="link" id="vmc-documentation-link" href="http://docs.vmware.com/vmc"><script type="text/javascript">document.write(ID_VMCDoc);</script></a></p>
+   <p><a class="link" id="on-prem-documentation-link" href="http://www.vmware.com/info?id=1414"><script type="text/javascript">document.write(ID_DownloadDoc);</script></a></p>
+  </div> <!--/GETTING STARTED TEXT-->
+
+  <div class="forAdmins">
+   <h1><script type="text/javascript">document.write(ID_ForAdmins);</script></h1>
+   <h1><script type="text/javascript">document.write(ID_VIDatacenters);</script></h1>
+   <p><script type="text/javascript">document.write(ID_VIDatacentersDesc);</script></p>
+   <p><script type="text/javascript">document.write('<a class="link" href="/folder">'+ ID_BrowseVCDatacenters +'</a>');</script></p>
+   <h1><script type="text/javascript">document.write(ID_ForDevs);</script></h1>
+   <h1><script type="text/javascript">document.write(ID_VISDK);</script></h1>
+   <p><script type="text/javascript">document.write(ID_VISDKDesc);</script></p>
+   <p><script type="text/javascript">document.write('<a class="link" href="https://developer.vmware.com/sdk/vsphere-management">'+ ID_DownloadSDK +'</a>');</script></p>
+   <p><script type="text/javascript">document.write('<a class="link" href="https://github.com/vmware/vsphere-automation-sdk">'+ ID_AutomationSDKs +'</a>');</script></p>
+   <p><script type="text/javascript">document.write('<a class="link" href="/mob/">'+ ID_BrowseVC +'</a>');</script></p>
+   <p><script type="text/javascript">document.write('<a class="link" href="/ui/#?extensionId=com.vmware.vsphere.client.h5.devcenter.apiexplorer">'+ ID_ApiExplorer +'</a>');</script></p>
+   <p><script type="text/javascript">document.write('<a class="link" href="/certs/download.zip">'+ ID_DownloadCerts +'</a>');</script></p>
+  </div>
+  <div id="copyRight">
+   <script type="text/javascript">document.write(ID_CopyrightText);</script>
+   <script type="text/javascript">document.write(ID_TrademarkText);</script>
+   <script type="text/javascript">document.write(ID_AboutOSSDesc);</script>
+  </div>
+  &nbsp;
+    <script type="text/javascript">
+      if (window.location.hostname.match(/\.vmc\.vmware\.com$/)) {
+        document.getElementById('on-prem-documentation-link').style.display = 'none';
+      } else {
+        document.getElementById('vmc-documentation-link').style.display = 'none';
+      }
+  </script>
+ </body>
+</html>

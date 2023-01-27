@@ -1,0 +1,60 @@
+
+provider "vsphere" {
+  
+  user           = "administrator@vsphere.local"
+  password       = "Passw0rt!"
+  vsphere_server = "192.168.179.85"
+  allow_unverified_ssl = true
+}
+
+data "vsphere_datacenter" "dc" {
+  name = "Datacenter"
+}
+
+data "vsphere_datastore" "datastore1" {
+  name = "datastore1"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_datastore" "datastore" {
+  name = "datastore"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_compute_cluster" "cluster" {
+ name          = "cluster-01"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+data "vsphere_network" "network" {
+  name          = "VM Network"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+
+#data "vsphere_resource_pool" "pool" {
+#  name          = "cluster-01"
+#  datacenter_id = data.vsphere_datacenter.dc.id
+#}
+
+
+data "vsphere_virtual_machine" "template" {
+  name          = "Oracle_8_Template"
+  datacenter_id = data.vsphere_datacenter.dc.id
+}
+
+resource "vsphere_virtual_machine" "vm" {
+  name             = "foo"
+  resource_pool_id = data.vsphere_compute_cluster.cluster.resource_pool_id
+  datastore_id     = data.vsphere_datacenter.dc.id
+  num_cpus         = 1
+  memory           = 1024
+  guest_id         = data.vsphere_virtual_machine.template.guest_id
+  network_interface {
+    network_id = data.vsphere_network.network.id
+  }
+  disk {
+    label = "disk0"
+    size  = 20
+  }
+  }
